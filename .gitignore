@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Datos procesados y artefactos generados (reproducibles vía `make all`)
+data/processed/
+reports/artifacts/
+reports/figures/
+reports/eda/
+
+# Material que no se publica en el repositorio (uso interno / se comparte aparte)
+notebooks/
+reports/DOCUMENTO_DE_ESTUDIO.md
+
+# Entorno / secretos  (NUNCA subir claves)
+.env
+.env.*
+!.env.example
+*.local
+*.key
+*.pem
+secrets.*
+
+# SO / editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Config local del harness (no es parte de la entrega)
+.claude/

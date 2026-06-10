@@ -1,0 +1,96 @@
+# =============================================================================
+# Configuración central del proyecto.
+# Toda decisión metodológica parametrizable se encuentra aquí.
+# =============================================================================
+
+project:
+  name: "cost-forecast"
+  seed: 42                       # semilla global para reproducibilidad
+
+paths:
+  raw_dir: "data/input"
+  consolidated: "data/input/historico_equipos.csv"
+  raw_x: "data/input/X.csv"
+  raw_y: "data/input/Y.csv"
+  raw_z: "data/input/Z.csv"
+  processed_dir: "data/processed"
+  reports_dir: "reports"
+  eda_dir: "reports/eda"
+  figures_dir: "reports/figures"
+  artifacts_dir: "reports/artifacts"
+
+# Esquema lógico de las series
+schema:
+  date_col: "Date"
+  inputs: ["X", "Y", "Z"]             # materias primas (insumos)
+  targets: ["Equipo1", "Equipo2"]     # equipos a estimar
+  price_prefix: "Price_"
+
+# Ingeniería de datos / reconciliación
+data:
+  reconcile_tolerance: 0.01           # tolerancia relativa al comparar individual vs consolidado
+  resample_freq: "B"                  # frecuencia base de trabajo (business days)
+
+# EDA / estacionariedad
+eda:
+  adf_significance: 0.05
+  kpss_significance: 0.05
+  max_lag_crosscorr: 20               # lags (días) para correlación cruzada insumo->equipo
+  outlier_z_threshold: 4.0            # |z-score| sobre retornos para marcar outliers
+
+# Decisión niveles vs cambios
+representation:
+  transform: "level"                  # "level" | "diff" | "logret"
+  cointegration_significance: 0.05
+
+# Selección de variables por votación
+selection:
+  consensus_threshold: 0.60           # la materia prima entra si la vota >= 60% de los métodos
+  max_lag: 10                         # lag máximo (días) a evaluar para cada insumo
+  corr_abs_threshold: 0.20            # |corr| en diferencias para que el método "corr" vote
+  lasso_alpha: null                   # null => LassoCV elige alpha
+  mi_quantile: 0.5                    # MI por encima de la mediana => voto
+  rf_importance_quantile: 0.5         # importancia RF/GBM por encima de la mediana => voto
+  methods: ["corr_lag", "elasticnet", "rf_importance", "gbm_importance", "ols_pvalue", "mutual_info"]
+
+# Ventana temporal
+window:
+  train_start: "2010-01-04"
+  train_end: "2021-12-31"
+  test_start: "2022-01-01"
+  test_end: "2022-12-31"
+  validation_start: "2023-01-01"
+  validation_end: "2023-08-31"
+  work_freq: "M"                      # frecuencia de trabajo para el pronóstico
+  forecast_horizon_months: 6          # horizonte de proyección
+
+# VIF (multicolinealidad) por equipo
+vif:
+  threshold: 10.0                     # VIF > 10 => multicolinealidad alta
+
+# Modelado
+models:
+  walk_forward_splits: 5
+  elasticnet:
+    l1_ratio: [0.1, 0.5, 0.7, 0.9, 1.0]
+  sarimax:
+    order: [1, 1, 1]
+    seasonal_order: [0, 0, 0, 0]
+  gbm:
+    n_estimators: 300
+    max_depth: 3
+    learning_rate: 0.05
+  baseline_ma_months: 3               # media móvil simple (solo baseline)
+
+# Proyección
+forecast:
+  confidence_level: 0.90              # bandas de predicción al 90%
+  n_bootstrap: 1000
+
+# Agente de IA
+agent:
+  model: "claude-haiku-4-5"
+  max_tokens: 1024                    # para controlar costo
+  temperature: 0.0
+  artifacts_dir: "reports/artifacts"
+  web_search: false

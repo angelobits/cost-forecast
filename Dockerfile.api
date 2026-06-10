@@ -1,0 +1,22 @@
+# Imagen de la API REST (FastAPI)
+FROM python:3.11-slim
+
+# uv para instalar dependencias
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
+WORKDIR /app
+COPY pyproject.toml uv.lock README.md ./
+COPY src ./src
+COPY config ./config
+COPY data/input ./data/input
+COPY reports/artifacts ./reports/artifacts
+COPY reports/figures ./reports/figures
+
+# Instala el paquete + extra api
+RUN uv sync --extra api --extra agent --no-dev --frozen
+
+ENV PYTHONPATH=/app/src
+EXPOSE 8000
+
+# ANTHROPIC_API_KEY se pasa por Key Vault o variable de entorno
+CMD ["uv", "run", "--no-sync", "uvicorn", "cost_forecast.api.app:app", "--host", "0.0.0.0", "--port", "8000"]

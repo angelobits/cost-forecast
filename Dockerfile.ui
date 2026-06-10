@@ -1,0 +1,22 @@
+# Imagen de la UI Streamlit
+FROM python:3.11-slim
+
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
+WORKDIR /app
+COPY pyproject.toml uv.lock README.md ./
+COPY src ./src
+COPY config ./config
+COPY app ./app
+COPY data/input ./data/input
+COPY reports/artifacts ./reports/artifacts
+COPY reports/figures ./reports/figures
+
+# Instala paquete + extras ui y agent
+RUN uv sync --extra ui --extra agent --no-dev --frozen
+
+ENV PYTHONPATH=/app/src
+EXPOSE 8501
+
+CMD ["uv", "run", "--no-sync", "streamlit", "run", "app/streamlit_app.py", \
+     "--server.address=0.0.0.0", "--server.port=8501", "--server.headless=true"]
