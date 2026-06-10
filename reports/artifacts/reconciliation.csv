@@ -1,0 +1,4 @@
+serie,n_overlap,match_rate_%,max_abs_diff,ind_rango,cons_rango,extiende_historico
+Price_X,3530,100.0,0.0,1988-06-27→2024-04-04,2010-01-04→2023-08-31,True
+Price_Y,3530,100.0,0.0,2006-07-11→2023-09-12,2010-01-04→2023-08-31,True
+Price_Z,3530,100.0,0.0,2010-01-01→2023-08-31,2010-01-04→2023-08-31,True

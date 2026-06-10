@@ -1,0 +1,310 @@
+{
+  "stationarity_levels": [
+    {
+      "serie": "X",
+      "adf_stat": -1.705,
+      "adf_p": 0.4284,
+      "kpss_stat": 2.691,
+      "kpss_p": 0.01,
+      "veredicto": "no estacionaria"
+    },
+    {
+      "serie": "Y",
+      "adf_stat": -2.53,
+      "adf_p": 0.1083,
+      "kpss_stat": 1.375,
+      "kpss_p": 0.01,
+      "veredicto": "no estacionaria"
+    },
+    {
+      "serie": "Z",
+      "adf_stat": -2.203,
+      "adf_p": 0.2052,
+      "kpss_stat": 1.463,
+      "kpss_p": 0.01,
+      "veredicto": "no estacionaria"
+    },
+    {
+      "serie": "Equipo1",
+      "adf_stat": -2.39,
+      "adf_p": 0.1445,
+      "kpss_stat": 1.335,
+      "kpss_p": 0.01,
+      "veredicto": "no estacionaria"
+    },
+    {
+      "serie": "Equipo2",
+      "adf_stat": -1.906,
+      "adf_p": 0.329,
+      "kpss_stat": 1.41,
+      "kpss_p": 0.01,
+      "veredicto": "no estacionaria"
+    }
+  ],
+  "stationarity_diffs": [
+    {
+      "serie": "X",
+      "adf_stat": -27.455,
+      "adf_p": 0.0,
+      "kpss_stat": 0.095,
+      "kpss_p": 0.1,
+      "veredicto": "estacionaria"
+    },
+    {
+      "serie": "Y",
+      "adf_stat": -8.727,
+      "adf_p": 0.0,
+      "kpss_stat": 0.08,
+      "kpss_p": 0.1,
+      "veredicto": "estacionaria"
+    },
+    {
+      "serie": "Z",
+      "adf_stat": -14.724,
+      "adf_p": 0.0,
+      "kpss_stat": 0.057,
+      "kpss_p": 0.1,
+      "veredicto": "estacionaria"
+    },
+    {
+      "serie": "Equipo1",
+      "adf_stat": -16.946,
+      "adf_p": 0.0,
+      "kpss_stat": 0.064,
+      "kpss_p": 0.1,
+      "veredicto": "estacionaria"
+    },
+    {
+      "serie": "Equipo2",
+      "adf_stat": -29.707,
+      "adf_p": 0.0,
+      "kpss_stat": 0.063,
+      "kpss_p": 0.1,
+      "veredicto": "estacionaria"
+    }
+  ],
+  "correlation_levels": {
+    "X": {
+      "X": 1.0,
+      "Y": 0.4916,
+      "Z": 0.4757,
+      "Equipo1": 0.5234,
+      "Equipo2": 0.5303
+    },
+    "Y": {
+      "X": 0.4916,
+      "Y": 1.0,
+      "Z": 0.8442,
+      "Equipo1": 0.9966,
+      "Equipo2": 0.9127
+    },
+    "Z": {
+      "X": 0.4757,
+      "Y": 0.8442,
+      "Z": 1.0,
+      "Equipo1": 0.844,
+      "Equipo2": 0.9827
+    },
+    "Equipo1": {
+      "X": 0.5234,
+      "Y": 0.9966,
+      "Z": 0.844,
+      "Equipo1": 1.0,
+      "Equipo2": 0.9133
+    },
+    "Equipo2": {
+      "X": 0.5303,
+      "Y": 0.9127,
+      "Z": 0.9827,
+      "Equipo1": 0.9133,
+      "Equipo2": 1.0
+    }
+  },
+  "correlation_diffs": {
+    "X": {
+      "X": 1.0,
+      "Y": 0.0502,
+      "Z": 0.1961,
+      "Equipo1": 0.0478,
+      "Equipo2": 0.0846
+    },
+    "Y": {
+      "X": 0.0502,
+      "Y": 1.0,
+      "Z": 0.1254,
+      "Equipo1": 0.3856,
+      "Equipo2": 0.1277
+    },
+    "Z": {
+      "X": 0.1961,
+      "Y": 0.1254,
+      "Z": 1.0,
+      "Equipo1": 0.0239,
+      "Equipo2": 0.4308
+    },
+    "Equipo1": {
+      "X": 0.0478,
+      "Y": 0.3856,
+      "Z": 0.0239,
+      "Equipo1": 1.0,
+      "Equipo2": 0.0583
+    },
+    "Equipo2": {
+      "X": 0.0846,
+      "Y": 0.1277,
+      "Z": 0.4308,
+      "Equipo1": 0.0583,
+      "Equipo2": 1.0
+    }
+  },
+  "partial_correlation": [
+    {
+      "equipo": "Equipo1",
+      "insumo": "X",
+      "corr_bivariada": 0.5234,
+      "corr_parcial": 0.4634,
+      "espuria": false
+    },
+    {
+      "equipo": "Equipo1",
+      "insumo": "Y",
+      "corr_bivariada": 0.9966,
+      "corr_parcial": 0.9901,
+      "espuria": false
+    },
+    {
+      "equipo": "Equipo1",
+      "insumo": "Z",
+      "corr_bivariada": 0.844,
+      "corr_parcial": 0.0,
+      "espuria": true
+    },
+    {
+      "equipo": "Equipo2",
+      "insumo": "X",
+      "corr_bivariada": 0.5303,
+      "corr_parcial": 0.42,
+      "espuria": false
+    },
+    {
+      "equipo": "Equipo2",
+      "insumo": "Y",
+      "corr_bivariada": 0.9127,
+      "corr_parcial": 0.8426,
+      "espuria": false
+    },
+    {
+      "equipo": "Equipo2",
+      "insumo": "Z",
+      "corr_bivariada": 0.9827,
+      "corr_parcial": 0.9728,
+      "espuria": false
+    }
+  ],
+  "crosscorr_best": {
+    "Equipo1": {
+      "X": {
+        "best_lag": 0,
+        "corr": 0.0478
+      },
+      "Y": {
+        "best_lag": 0,
+        "corr": 0.3856
+      },
+      "Z": {
+        "best_lag": 1,
+        "corr": 0.0465
+      }
+    },
+    "Equipo2": {
+      "X": {
+        "best_lag": 0,
+        "corr": 0.0846
+      },
+      "Y": {
+        "best_lag": 0,
+        "corr": 0.1277
+      },
+      "Z": {
+        "best_lag": 0,
+        "corr": 0.4308
+      }
+    }
+  },
+  "cointegration_engle_granger": [
+    {
+      "test": "engle_granger",
+      "pair": "Equipo1~X",
+      "stat": -1.908,
+      "pvalue": 0.5758,
+      "cointegrated": false
+    },
+    {
+      "test": "engle_granger",
+      "pair": "Equipo1~Y",
+      "stat": -3.807,
+      "pvalue": 0.0133,
+      "cointegrated": true
+    },
+    {
+      "test": "engle_granger",
+      "pair": "Equipo1~Z",
+      "stat": -4.05,
+      "pvalue": 0.0061,
+      "cointegrated": true
+    },
+    {
+      "test": "engle_granger",
+      "pair": "Equipo2~X",
+      "stat": -2.058,
+      "pvalue": 0.4982,
+      "cointegrated": false
+    },
+    {
+      "test": "engle_granger",
+      "pair": "Equipo2~Y",
+      "stat": -4.478,
+      "pvalue": 0.0013,
+      "cointegrated": true
+    },
+    {
+      "test": "engle_granger",
+      "pair": "Equipo2~Z",
+      "stat": -3.755,
+      "pvalue": 0.0156,
+      "cointegrated": true
+    }
+  ],
+  "cointegration_johansen": {
+    "test": "johansen_trace",
+    "vars": [
+      "X",
+      "Y",
+      "Z",
+      "Equipo1",
+      "Equipo2"
+    ],
+    "trace_stats": [
+      2992.86,
+      1458.28,
+      40.97,
+      19.5,
+      6.0
+    ],
+    "crit_values": [
+      69.82,
+      47.85,
+      29.8,
+      15.49,
+      3.84
+    ],
+    "n_cointegration_relations": 5
+  },
+  "outliers_count": {
+    "X": 19,
+    "Y": 51,
+    "Z": 13,
+    "Equipo1": 3,
+    "Equipo2": 2
+  }
+}

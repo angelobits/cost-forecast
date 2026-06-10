@@ -1,0 +1,86 @@
+{
+  "Equipo1": {
+    "voting_matrix": {
+      "X": {
+        "corr_lag": 0,
+        "elasticnet": 1,
+        "rf_importance": 1,
+        "gbm_importance": 0,
+        "ols_pvalue": 0,
+        "mutual_info": 0
+      },
+      "Y": {
+        "corr_lag": 1,
+        "elasticnet": 1,
+        "rf_importance": 0,
+        "gbm_importance": 1,
+        "ols_pvalue": 1,
+        "mutual_info": 1
+      },
+      "Z": {
+        "corr_lag": 0,
+        "elasticnet": 1,
+        "rf_importance": 0,
+        "gbm_importance": 0,
+        "ols_pvalue": 0,
+        "mutual_info": 0
+      }
+    },
+    "consensus": {
+      "X": 0.333,
+      "Y": 0.833,
+      "Z": 0.167
+    },
+    "best_lags": {
+      "X": 0,
+      "Y": 0,
+      "Z": 1
+    },
+    "selected": [
+      "Y"
+    ],
+    "threshold": 0.6
+  },
+  "Equipo2": {
+    "voting_matrix": {
+      "X": {
+        "corr_lag": 0,
+        "elasticnet": 1,
+        "rf_importance": 0,
+        "gbm_importance": 0,
+        "ols_pvalue": 0,
+        "mutual_info": 0
+      },
+      "Y": {
+        "corr_lag": 0,
+        "elasticnet": 1,
+        "rf_importance": 0,
+        "gbm_importance": 0,
+        "ols_pvalue": 1,
+        "mutual_info": 0
+      },
+      "Z": {
+        "corr_lag": 1,
+        "elasticnet": 1,
+        "rf_importance": 1,
+        "gbm_importance": 1,
+        "ols_pvalue": 1,
+        "mutual_info": 1
+      }
+    },
+    "consensus": {
+      "X": 0.167,
+      "Y": 0.333,
+      "Z": 1.0
+    },
+    "best_lags": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "selected": [
+      "Z"
+    ],
+    "threshold": 0.6
+  }
+}

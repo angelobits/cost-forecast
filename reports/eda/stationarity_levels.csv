@@ -1,0 +1,6 @@
+serie,adf_stat,adf_p,kpss_stat,kpss_p,veredicto
+X,-1.705,0.4284,2.691,0.01,no estacionaria
+Y,-2.53,0.1083,1.375,0.01,no estacionaria
+Z,-2.203,0.2052,1.463,0.01,no estacionaria
+Equipo1,-2.39,0.1445,1.335,0.01,no estacionaria
+Equipo2,-1.906,0.329,1.41,0.01,no estacionaria

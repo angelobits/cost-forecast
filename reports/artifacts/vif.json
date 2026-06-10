@@ -1,0 +1,24 @@
+{
+  "Equipo1": {
+    "vif": [
+      {
+        "variable": "Y",
+        "vif": 1.0
+      }
+    ],
+    "threshold": 10.0,
+    "high_vif_vars": [],
+    "strategy": "Sin multicolinealidad relevante (todos los VIF < umbral)."
+  },
+  "Equipo2": {
+    "vif": [
+      {
+        "variable": "Z",
+        "vif": 1.0
+      }
+    ],
+    "threshold": 10.0,
+    "high_vif_vars": [],
+    "strategy": "Sin multicolinealidad relevante (todos los VIF < umbral)."
+  }
+}
