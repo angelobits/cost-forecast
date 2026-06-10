@@ -131,22 +131,16 @@ se generan al ejecutar el pipeline y no se versionan, ya que son reproducibles c
 
 ### 4.2 Principios y lineamientos de desarrollo
 
-El proyecto sigue principios de bajo acoplamiento y alta cohesión: cada módulo cumple una
-responsabilidad única y se comunica mediante interfaces simples. Por ejemplo, la aplicación web,
-la API y el agente consumen la misma capa de modelado sin duplicar lógica, y el estimador
-interactivo reutiliza el modelo de regresión ya implementado. Esto facilita el mantenimiento
-(un cambio queda contenido en su módulo) y la escalabilidad (cada interfaz se despliega de forma
-independiente).
+El proyecto sigue principios de bajo acoplamiento y alta cohesión, donde cada módulo cumple una responsabilidad única y se comunica mediante interfaces simples, por ejemplo, la aplicación web, la API y el agente consumen la misma capa de modelado sin duplicar lógica, y el estimador interactivo reutiliza el modelo de regresión ya implementado, lo que facilita el mantenimiento y la escalabilidad-
 
 Los lineamientos de desarrollo aplicados son:
 
-- Disposición `src-layout` y paquete instalable; gestión de dependencias con UV y archivo de
-  bloqueo (`uv.lock`) para entornos reproducibles.
+- Disposición `src-layout` y paquete instalable, gestión de dependencias con UV y archivo de bloqueo (`uv.lock`) para entornos reproducibles.
 - Configuración externalizada en un único archivo YAML, sin rutas ni umbrales codificados.
 - Anotaciones de tipo (type hints) y docstrings en las funciones públicas.
 - Registro mediante `logging` en lugar de `print`, y manejo explícito de errores.
 - Semilla global fija para garantizar resultados deterministas.
-- Estilo y formato verificados con ruff y black; pruebas automatizadas con pytest.
+- Estilo y formato verificados con ruff y black, además de pruebas automatizadas con pytest.
 
 ---
 

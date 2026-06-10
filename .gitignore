@@ -12,8 +12,12 @@ venv/
 # Datos procesados y artefactos generados (reproducibles vía `make all`)
 data/processed/
 reports/artifacts/
-reports/figures/
 reports/eda/
+
+# Figuras del modelo (reproducibles); se excluyen los diagramas de arquitectura
+reports/figures/
+!reports/figures/arquitectura.png
+!reports/figures/demo.png
 
 # Material que no se publica en el repositorio (uso interno / se comparte aparte)
 notebooks/
